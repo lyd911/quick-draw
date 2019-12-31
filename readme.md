@@ -10,6 +10,7 @@ You can install Conda for python which resolves all the dependencies for machine
 Quick, Draw! is an online game developed by Google that challenges players to draw a picture of an object or idea and then uses a neural network artificial intelligence to guess what the drawings represent. The AI learns from each drawing, increasing its ability to guess correctly in the future.The game is similar to Pictionary in that the player only has a limited time to draw (20 seconds).The concepts that it guesses can be simple, like 'foot', or more complicated, like 'animal migration'. This game is one of many simple games created by Google that are AI based as part of a project known as 'A.I. Experiments'. [Quick, Draw](https://quickdraw.withgoogle.com/)
 
 ### Dataset
+You can either download from BaiduNetDisk(https://pan.baidu.com/s/1PAkFyH8EV-JES2zhB_5xBw) or from Google Cloud Platform(https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap)
 Follow the documentation [here](https://github.com/googlecreativelab/quickdraw-dataset) to get the dataset. I got `.npy` files from google cloud for 14 drawings.
 
 ##### Labels

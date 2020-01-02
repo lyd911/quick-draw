@@ -1,4 +1,4 @@
-## Quick, Draw 
+## Quick, Draw！
 
 Using CNN model to do sketch recognition, based on Google quick draw dataset https://quickdraw.withgoogle.com/data, codes modified from https://github.com/akshaybahadur21/QuickDraw. This repo doesn't include dataset
 

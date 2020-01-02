@@ -12,9 +12,8 @@ I got `.npy` files from google cloud for 10 drawings ['candle', 'door', 'lightni
 ### Procedure
 
 1) Get the dataset as mentioned above and place the `.npy` files in `/data` folder.
-2) First, run `LoadData.py` which will load the data from the `/data` folder and store the features and labels in  pickel files.
-3) Now you need to have the data, run `QD_trainer.py` which will load data from pickle and augment it. After this, the training process begins. The output is trained model file 'QuickDraw.h5'.
-4) Now you need to test the model, run `QuickDrawApp.py` which will take the test file stored in source folder as the input, and get the prediction.
+2) First, run `QD_trainer.py` which will load the data from the `/data` folder and store the features and labels in  pickel files. Then load data from pickle and augment it. After this, the training process begins. The output is trained model file 'QuickDraw.h5'.
+3) Now you need to test the model, run `QuickDrawApp.py` which will take the test file stored in source folder as the input, and get the prediction.
 
 
 ### Requirements

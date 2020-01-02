@@ -19,13 +19,13 @@ I got `.npy` files from google cloud for 10 drawings ['candle', 'door', 'lightni
 
 ### Requirements
 
-python: 3.6.5
-pip: 19.3.1
-tensorflow: 2.0.0
-numpy: 1.16.1
-scikit-learn: 0.22
-keras: 2.3.1
-cv2: 4.1.2
+python: 3.6.5  
+pip: 19.3.1  
+tensorflow: 2.0.0  
+numpy: 1.16.1  
+scikit-learn: 0.22  
+keras: 2.3.1  
+cv2: 4.1.2  
 
 ### References:
  

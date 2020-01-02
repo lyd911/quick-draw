@@ -4,11 +4,12 @@ from sklearn.utils import shuffle
 from keras.layers import Dense,Flatten, Conv2D
 from keras.layers import MaxPooling2D, Dropout
 from keras.utils import np_utils, print_summary
-import tensorflow as tf
 from keras.models import Sequential
 from keras.callbacks import ModelCheckpoint
 import pickle
 from keras.callbacks import TensorBoard
+import os
+
 
 def keras_model(image_x, image_y):
     num_of_classes = 10
@@ -53,7 +54,42 @@ def prepress_labels(labels):
     return labels
 
 
+def load_data():
+    files = os.listdir("./data")
+    x = []
+    x_load = []
+    y = []
+    y_load = []
+    count = 0
+    for file in files:
+        file = "./data/" + file
+        x = np.load(file)
+        x = x.astype('float32') / 255.
+        x = x[0:10000, :]
+        x_load.append(x)
+        y = [count for _ in range(10000)]
+        count += 1
+        y = np.array(y).astype('float32')
+        y = y.reshape(y.shape[0], 1)
+        y_load.append(y)
+
+    return x_load, y_load
+
+
+def generate_pickle():
+    features, labels = load_data()
+    features = np.array(features).astype('float32')
+    labels = np.array(labels).astype('float32')
+    features = features.reshape(features.shape[0]*features.shape[1], features.shape[2])
+    labels = labels.reshape(labels.shape[0]*labels.shape[1], labels.shape[2])
+    with open("features", "wb") as f:
+        pickle.dump(features, f, protocol=4)
+    with open("labels", "wb") as f:
+        pickle.dump(labels, f, protocol=4)
+
+
 def main():
+    generate_pickle()
     features, labels = loadFromPickle()
     # features, labels = augmentData(features, labels)
     features, labels = shuffle(features, labels)

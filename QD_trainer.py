@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
-from keras.layers import Dense,Flatten, Conv2D
+from keras.layers import Dense, Flatten, Conv2D
 from keras.layers import MaxPooling2D, Dropout
 from keras.utils import np_utils, print_summary
 from keras.models import Sequential

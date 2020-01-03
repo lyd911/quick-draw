@@ -23,7 +23,6 @@ def keras_process_image(img):
     return img
 
 
-
 def main():
     categories = ['candle', 'door', 'lightning', 'moon', 'mountain', 'shoes', 'sword', 't-shirt', 'telephone', 'train']
     img_name = 'test_shoes_1.png'

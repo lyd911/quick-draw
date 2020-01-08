@@ -25,12 +25,24 @@ def keras_process_image(img):
 
 def main():
     categories = ['candle', 'door', 'lightning', 'moon', 'mountain', 'shoes', 'sword', 't-shirt', 'telephone', 'train']
-    img_name = 'test_shoes_1.png'
-    img = cv2.imread(img_name, 0)
-    img = 255 - img
-    pred_proba, pred_class = keras_predict(model, img)
-    print('Prediction for', img_name, 'is:', categories[pred_class])
+    count = 0
+    test_case = 'train'
+    for i in range(1, 313):
+        img = cv2.imread('./test_dataset/' + test_case + '/' + str(i) + '.png', 0)
+        img = 255 - img
+        pred_proba, pred_class = keras_predict(model, img)
+        if pred_class == categories.index(test_case):
+            print(categories[pred_class] + ' index is: ', i)
+            count += 1
+    print(str(count) + ' out of 312 pics can be recognized as '+ test_case)
 
-# keras_predict(model, np.zeros((50, 50, 1), dtype=np.uint8))
+# def main():
+#     categories = ['candle', 'door', 'lightning', 'moon', 'mountain', 'shoes', 'sword', 't-shirt', 'telephone', 'train']
+#     img_name = 'test_shoes_1.png'
+#     img = cv2.imread(img_name, 0)
+#     img = 255 - img
+#     pred_proba, pred_class = keras_predict(model, img)
+#     print('Prediction for', img_name, 'is:', categories[pred_class])
+
 if __name__ == '__main__':
     main()
